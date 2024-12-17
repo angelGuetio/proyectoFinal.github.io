@@ -1,6 +1,3 @@
-/* =========================
-   Configuración General
-========================= */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,74 +6,49 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('../img/fondo.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #333;
+    background-image: url('../img/fondo.jpg'); /* Ruta corregida */
+    background-size: cover; /* La imagen cubrirá toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
-/* =========================
-   Sidebar
-========================= */
-.sidebar {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    width: 250px;
-    height: 100vh;
+.login-container {
+    background-color: rgba(231, 222, 222, 0.3);
     padding: 20px;
-    box-sizing: border-box;
-}
-
-.sidebar .user-info {
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Corrección de la propiedad */
     text-align: center;
-    margin-bottom: 20px;
+    width: 300px;
+    color: rgb(255, 255, 255);
 }
 
-.sidebar .profile-picture {
-    background-color: #007bff;
-    color: white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 80%;
     padding: 10px;
-    display: block;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.sidebar ul li a:hover {
+.login-container button {
     background-color: #007bff;
-}
-
-.logout-btn {
-    background-color: #d9534f;
     color: white;
     padding: 10px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.logout-btn:hover {
-    background-color: #c9302c;
-}
-
-/* =========================
-   Contenido Principal
-========================= */
-.main-content {
-    flex: 1;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
+    cursor: pointer;
+    width: 80%;
+    font-weight: bold; /* Negrilla */
+    margin-top: 20px; /* Espaciado entre cajas y botón */
 }
+
+.home-container{
+    background-color: rgba(231, 222, 222, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Corrección de la propiedad */
+    text-align: center;
+    width: 300px;
+    color: rgb(255, 255, 255);
+};
