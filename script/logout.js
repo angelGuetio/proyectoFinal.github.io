@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Seleccionar elementos
+    // ============================
+    // SECCIÓN 1: Gestión de Usuarios
+    // ============================
     const logoutButton = document.querySelector('.logout-btn');
     const registerForm = document.querySelector('.register-form');
     const tableBody = document.querySelector('.user-table tbody');
-    const userCountHeader = document.querySelector('.user-count'); // Conteo de usuarios
-    let userCode = 1; // Inicialización del código de usuario
-    let editRow = null; // Variable para almacenar la fila que se va a editar
+    const userCountHeader = document.querySelector('.user-count');
+    let userCode = 1; // Código inicial para usuarios
+    let editRow = null; // Variable para manejar la edición de filas
 
     // Funcionalidad: Cerrar Sesión
     if (logoutButton) {
@@ -19,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         registerForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Capturar valores del formulario
+            // Capturar valores
             const firstName = document.getElementById('first-name').value;
             const lastName = document.getElementById('last-name').value;
             const email = document.getElementById('email').value;
@@ -27,19 +29,19 @@ document.addEventListener("DOMContentLoaded", function () {
             const userType = document.getElementById('user-type').value;
             const password = document.getElementById('password').value;
 
-            // Validar que no haya campos vacíos
+            // Validar campos
             if (firstName && lastName && email && area && userType && password) {
                 if (editRow) {
-                    // Actualizar fila existente
+                    // Editar fila existente
                     editRow.cells[1].innerText = firstName;
                     editRow.cells[2].innerText = lastName;
                     editRow.cells[3].innerText = area;
                     editRow.cells[4].innerText = email;
                     editRow.cells[5].innerText = userType;
                     editRow.cells[6].innerText = password;
-                    editRow = null; // Reiniciar variable
+                    editRow = null;
                 } else {
-                    // Crear nueva fila con código de usuario
+                    // Crear nueva fila
                     const newRow = document.createElement('tr');
                     newRow.innerHTML = `
                         <td>${userCode}</td>
@@ -54,14 +56,13 @@ document.addEventListener("DOMContentLoaded", function () {
                             <button class="delete-btn">Eliminar</button>
                         </td>
                     `;
-
-                    tableBody.appendChild(newRow); // Agregar fila a la tabla
-                    userCode++; // Incrementar el código de usuario
+                    tableBody.appendChild(newRow);
+                    userCode++;
                 }
 
-                registerForm.reset(); // Limpiar formulario
-                addTableEventListeners(); // Reasignar eventos
-                updateUserCount(); // Actualizar el conteo de usuarios
+                registerForm.reset();
+                addTableEventListeners();
+                updateUserCount();
             } else {
                 alert("Por favor, completa todos los campos.");
             }
@@ -72,8 +73,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function addTableEventListeners() {
         document.querySelectorAll('.delete-btn').forEach(button => {
             button.addEventListener('click', function () {
-                this.closest('tr').remove(); // Eliminar fila
-                updateUserCount(); // Actualizar el conteo
+                this.closest('tr').remove();
+                updateUserCount();
             });
         });
 
@@ -91,13 +92,69 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Función para actualizar el conteo de usuarios
     function updateUserCount() {
         const rowCount = tableBody.querySelectorAll('tr').length;
         userCountHeader.innerText = `Total de Usuarios: ${rowCount}`;
     }
 
-    // Asignar eventos iniciales
     addTableEventListeners();
-    updateUserCount(); // Actualizar el conteo al cargar la página
+    updateUserCount();
+
+    // ============================
+    // SECCIÓN 2: Slider de Imágenes
+    // ============================
+    const slidesContainer = document.querySelector('.slides');
+    const images = document.querySelectorAll('.slides img');
+    let currentIndex = 0;
+    const totalImages = images.length;
+    const intervalTime = 3000; // Tiempo entre imágenes (3 segundos)
+    let slideInterval;
+
+    // Función para mostrar una imagen específica
+    function showSlide(index) {
+        slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    // Función para avanzar a la siguiente imagen
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        showSlide(currentIndex);
+    }
+
+    // Función para pausar y reanudar el slider
+    function pauseSlider() {
+        clearInterval(slideInterval);
+    }
+
+    function playSlider() {
+        slideInterval = setInterval(nextSlide, intervalTime);
+    }
+
+    // Iniciar el slider automáticamente
+    slideInterval = setInterval(nextSlide, intervalTime);
+
+    // Agregar controles opcionales
+    document.body.insertAdjacentHTML("beforeend", `
+        <div class="slider-controls">
+            <button id="prevBtn">Anterior</button>
+            <button id="pauseBtn">Pausar</button>
+            <button id="playBtn">Reanudar</button>
+            <button id="nextBtn">Siguiente</button>
+        </div>
+    `);
+
+    // Eventos de los botones
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        pauseSlider();
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        showSlide(currentIndex);
+    });
+
+    document.getElementById('pauseBtn').addEventListener('click', pauseSlider);
+    document.getElementById('playBtn').addEventListener('click', playSlider);
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        pauseSlider();
+        nextSlide();
+    });
 });

@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="css/styles-home.css">
+    <link rel="stylesheet" href="css/styles-home.css"> <!-- Enlace al CSS General -->
+    <link rel="stylesheet" href="css/slider.css"> <!-- Enlace al CSS del slider -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Enlace al CSS del slider -->
 </head>
 <body>
     <!-- Sidebar -->
@@ -16,42 +18,67 @@
         </div>
         <ul class="menu">
             <div class="enlaces">
-
                 <li><a href="home.html">Inicio</a></li>
                 <li><a href="#">Requerimientos</a></li>
                 <li><a href="#">Consultas estado</a></li>
                 <li><a href="registrar-usuario.html">Agregar nuevo usuario</a></li>
                 <li><a href="manual-usuario.html">Manual de usuario</a></li>
                 <li><a href="#">Preguntas frecuentes</a></li>
-
             </div>
-            
         </ul>
         <button class="logout-btn">Cerrar Sesión</button>
     </div>
 
-    <!-- Main Content -->
+    <!-- Contenido Principal -->
     <div class="main-content">
-        <!-- Header -->
         <header>
             <div class="logo">
                 <span><b>ABASTECIMIENTO</b></span>
             </div>
         </header>
 
-        <!-- Contenido Principal -->
         <div class="content">
             <h2>¡Bienvenido a nuestra plataforma de gestión!</h2><br>
-            <p>Te encuentras en un espacio diseñado para facilitar la realización de tus requisiciones de manera ágil, organizada y eficiente. Aquí podrás gestionar tus solicitudes, consultar el estado de tus requerimientos y acceder a herramientas que optimizan tu flujo de trabajo.
-
-                Además, encontrarás secciones dedicadas a la documentación clave, como manuales de usuario y preguntas frecuentes, para que siempre tengas a la mano la información que necesitas. Nuestro objetivo es simplificar tus tareas diarias y garantizar que tengas todo el soporte necesario para cumplir tus objetivos.
-                
-                ¡Comienza ahora y aprovecha al máximo todas las funcionalidades que hemos preparado para ti!</p>
-        </div>
-    </div>
-
-    <!-- Script JavaScript para Cerrar Sesión -->
+            <p>Te encuentras en un espacio diseñado para facilitar la realización de tus requisiciones...</p><br>
+            <div>
+               
+            </header>
+            <section>
+                <div class="card-container">
+                    <div class="card">
+                        <img src="img/leon.jpg" alt="">
+                        <div class="card-content">
+                            <h2>León</h2>
+                            <p>El león es concocido como el rey de la selva. Vive en las sabanas y en las praderas</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/caballo.jpg" alt="">
+                        <div class="card-content">
+                            <h2>Caballo</h2>
+                            <p>Mamífero solípedo del orden de los perisodáctilos, de tamaño grande y extremidades largas, cuello y cola poblados de cerdas largas y abundantes, que se domestica fácilmente y suele utilizarse como montura </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/lobo.jpg" alt="">
+                        <div class="card-content">
+                            <h2>Lobo</h2>
+                            <p>Mamífero carnívoro, semejante a un perro grande, con pelaje de color gris oscuro, hocico puntiagudo, orejas tiesas y cola larga y muy poblada, que vive salvaje, es gregario y puede atacar al ganado. Usado en masculino referido a la especie.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/nocoje.jpg" alt="">
+                        <div class="card-content">
+                            <h2>Conejo</h2>
+                            <p>Mamífero del orden de los lagomorfos, de unos 40 centímetro(s) de largo, comprendida la cola, de pelaje espeso de color ordinariamente gris, orejas muy largas, patas posteriores más largas que las anteriores, cola muy corta, que vive en madrigueras</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+            
+    <!-- Scripts -->
     <script src="script/logout.js"></script>
-
+    <script src="script/slider.js"></script> <!-- Script del slider -->
 </body>
 </html>
