@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Usuario</title>
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="css/styles-home.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="user-info">
+            <div class="profile-picture">AG</div>
+            <h3>ANGEL YESID GUETIO</h3>
+            <p>yesid4681@gmail.com</p>
+        </div>
+        <ul class="menu">
+            <div class="enlaces">
+
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="#">Requerimientos</a></li>
+                <li><a href="#">Consultas estado</a></li>
+                <li><a href="registrar-usuario.html">Agregar nuevo usuario</a></li>
+                <li><a href="manual-usuario.html">Manual de usuario</a></li>
+                <li><a href="#">Preguntas frecuentes</a></li>
+
+            </div>
+            
+        </ul>
+        <button class="logout-btn">Cerrar Sesión</button>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <span><b>ABASTECIMIENTO</b></span>
+            </div>
+        </header>
+
+        <!-- Sección: Gestionar Usuarios -->
+        <div class="content">
+            <h2>Gestionar Usuarios</h2>
+
+            <!-- Formulario de Registro -->
+            <form class="register-form" action="#" method="post">
+                <input type="text" id="first-name" placeholder="Nombres" required>
+                <input type="text" id="last-name" placeholder="Apellidos" required>
+                <input type="email" id="email" placeholder="Correo Electrónico" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <select id="area" required>
+                    <option value="">Área</option>
+                    <option value="tic">TIC</option>
+                    <option value="abastecimiento">Abastecimiento</option>
+                    <option value="comercial">Comercial</option>
+                    <option value="aseo">Aseo</option>
+                    <option value="acueducto">Acueducto</option>
+                </select>
+                <select id="user-type" required>
+                    <option value="">Tipo de Usuario</option>
+                    <option value="admin">Administrador</option>
+                    <option value="user">Usuario</option>
+                </select>
+                <button type="submit" class="register-btn">Agregar Usuario</button>
+            </form>
+
+            <!-- Tabla de Registros -->
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Área</th>
+                        <th>Correo</th>
+                        <th>Contraseña</th>
+                        <th>Tipo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Script para las funcionalidades -->
+    <script src="script/logout.js"></script>
+</body>
+</html>
