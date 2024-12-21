@@ -2,20 +2,27 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    display: flex;
-    height: 100vh;
+    display: flex; /* Flexbox para alinear sidebar y contenido principal */
+    min-height: 100vh; /* Altura mínima para cubrir toda la pantalla */
     background-color: #f8f9fa;
+    flex-direction: column; /* Flex en columna para pantallas pequeñas */
 }
 
 /* Sidebar */
 .sidebar {
-    width: 250px;
+    width: 250px; /* Ancho fijo */
     background-color: #fff;
     border-right: 1px solid #ddd;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    box-sizing: border-box;
+    height: 100vh;
+    position: fixed; /* Fija la barra lateral */
+    top: 0;
+    left: 0;
+    overflow-y: auto; /* Scroll si el contenido es más grande */
 }
 
 .user-info {
@@ -86,6 +93,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 header .logo span {
@@ -93,129 +102,69 @@ header .logo span {
     font-weight: bold;
 }
 
-header .tic-logo {
-    font-size: 18px;
-    font-weight: bold;
-}
-
 /* Contenido Principal */
-.main-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: #f4f4f4;
-}
-
-.content {
-    padding: 20px;
-    background-color: #f4f4f4;
-    min-height: 100vh;
-}
-
-/* Títulos */
-h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-    text-align: center;
-}
-
-/* Header */
-header {
-    background-color: #002855;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* Contenido Principal */
-.content {
-    padding: 20px;
-    background-color: #f8f9fa;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 22px;
-    color: #333;
-}
-
-/* General */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    background-color: #f8f9fa;
-}
-
-.sidebar {
-    width: 250px;
-    background-color: #fff;
-    border-right: 1px solid #ddd;
-    padding: 20px;
-}
-
 .main-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-}
-
-header {
-    background-color: #002855;
-    color: white;
-    padding: 10px 20px;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* Contenido Principal */
-.content {
+    margin-left: 270px; /* Compensa el ancho de la sidebar */
+    background-color: #f4f4f4;
     padding: 20px;
+    box-sizing: border-box;
+}
+
+.content {
     background-color: #fff;
     border-radius: 8px;
-    margin: 20px;
+    margin: 20px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: justify;
 }
 
-h2 {
-    margin-bottom: 20px;
-    font-size: 22px;
-    text-align: center;
-    color: #333;
-}
-
-/* Formulario Horizontal */
+/* Formulario de Registro */
 .register-form {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 15px;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .register-form input,
 .register-form select {
-    padding: 8px;
+    flex: 1 1 calc(50% - 15px); /* Permite que ocupen la mitad del ancho disponible */
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-    width: 150px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
 }
 
-.register-form button {
+.register-btn {
+    flex: 1 1 100%; /* Ocupa el ancho completo en una nueva fila */
+    padding: 12px;
     background-color: #007bff;
-    color: white;
+    color: #fff;
     border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
     font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.register-form button:hover {
+.register-btn:hover {
     background-color: #0056b3;
 }
 
@@ -269,23 +218,119 @@ h2 {
     opacity: 0.8;
 }
 
-.enlaces {
-    width: 240px;
-    background-color:rgba(247, 240, 240, 0.1);
-    border-right: 1px solid #ddd;
-    padding: 10px;
-    display: flex;
-    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
-    align-items: flex-start; /* Alinea todo el contenido a la izquierda */
+/* Footer */
+footer {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .register-form input,
+    .register-form select {
+        flex: 1 1 100%; /* Ocupa el ancho completo en pantallas pequeñas */
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo span {
+        font-size: 18px;
+    }
+    .content {
+        padding: 10px;
+    }
+    .user-table th, .user-table td {
+        font-size: 12px;
+        padding: 5px;
+    }
+}
+
+/* Contenedor principal */
+.form-container {
+    width: 90%; /* Ancho relativo */
+    max-width: 800px; /* Ancho máximo */
+    margin: 20px auto; /* Centrar horizontalmente */
+    padding: 20px;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar contenido horizontalmente */
 }
-.contento {
-  
-    flex-direction: column; /* Coloca el contenido en una columna */
-    align-items: center; /* Centra el contenido horizontalmente */
-    text-align: center; /* Alinea el texto dentro del contenedor */
-    background-color: #f8f9fa; /* Fondo opcional para el contenedor */
-    height: 300px; /* Altura fija de 300 píxeles */
+
+/* Título del formulario */
+.form-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
 }
+
+/* Filas del formulario */
+.form-row {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Etiquetas */
+.form-row label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Campos de texto y select */
+.form-row input,
+.form-row select,
+.form-row textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Botón de envío */
+.form-row button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.form-row button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .form-container {
+        width: 95%; /* Reduce el ancho en pantallas pequeñas */
+    }
+}
+
 

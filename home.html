@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="css/styles-home.css"> <!-- Enlace al CSS General -->
-    <link rel="stylesheet" href="css/slider.css"> <!-- Enlace al CSS del slider -->
-    <link rel="stylesheet" href="css/style.css"> <!-- Enlace al CSS del slider -->
+    <link rel="stylesheet" href="css/styles-home.css" type="text/css"> <!-- Enlace al CSS General -->
+    <link rel="stylesheet" href="css/style.css" type="text/css"> <!-- Enlace al CSS del slider -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Sidebar -->
@@ -19,11 +19,10 @@
         <ul class="menu">
             <div class="enlaces">
                 <li><a href="home.html">Inicio</a></li>
-                <li><a href="#">Requerimientos</a></li>
-                <li><a href="#">Consultas estado</a></li>
+                <li><a href="requisiciones.html">Requerimientos</a></li>
+                <li><a href="formulario.html">Consultas estado</a></li>
                 <li><a href="registrar-usuario.html">Agregar nuevo usuario</a></li>
                 <li><a href="manual-usuario.html">Manual de usuario</a></li>
-                <li><a href="#">Preguntas frecuentes</a></li>
             </div>
         </ul>
         <button class="logout-btn">Cerrar Sesión</button>
@@ -39,46 +38,45 @@
 
         <div class="content">
             <h2>¡Bienvenido a nuestra plataforma de gestión!</h2><br>
-            <p>Te encuentras en un espacio diseñado para facilitar la realización de tus requisiciones...</p><br>
-            <div>
-               
-            </header>
+            <p>Hola y bienvenido! Nos alegra que estés aquí. Este espacio ha sido diseñado especialmente para brindarte toda la información, recursos y herramientas que necesitas de manera clara y accesible. Aquí podrás explorar nuestras soluciones, conocer más sobre nosotros y mantenerte actualizado con nuestras últimas novedades.
+
+                Nuestro compromiso es acompañarte en cada paso, ofreciéndote un servicio de calidad que se adapta a tus necesidades. ¡Siéntete en casa! Navega, descubre y no dudes en contactarnos para cualquier consulta.
+                
+                ¡Gracias por visitarnos! 😊</p><br>
             <section>
-                <div class="card-container">
-                    <div class="card">
-                        <img src="img/leon.jpg" alt="">
-                        <div class="card-content">
-                            <h2>León</h2>
-                            <p>El león es concocido como el rey de la selva. Vive en las sabanas y en las praderas</p>
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/image1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/image2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/image3.jpg" class="d-block w-100" alt="...">
                         </div>
                     </div>
-                    <div class="card">
-                        <img src="img/caballo.jpg" alt="">
-                        <div class="card-content">
-                            <h2>Caballo</h2>
-                            <p>Mamífero solípedo del orden de los perisodáctilos, de tamaño grande y extremidades largas, cuello y cola poblados de cerdas largas y abundantes, que se domestica fácilmente y suele utilizarse como montura </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="img/lobo.jpg" alt="">
-                        <div class="card-content">
-                            <h2>Lobo</h2>
-                            <p>Mamífero carnívoro, semejante a un perro grande, con pelaje de color gris oscuro, hocico puntiagudo, orejas tiesas y cola larga y muy poblada, que vive salvaje, es gregario y puede atacar al ganado. Usado en masculino referido a la especie.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="img/nocoje.jpg" alt="">
-                        <div class="card-content">
-                            <h2>Conejo</h2>
-                            <p>Mamífero del orden de los lagomorfos, de unos 40 centímetro(s) de largo, comprendida la cola, de pelaje espeso de color ordinariamente gris, orejas muy largas, patas posteriores más largas que las anteriores, cola muy corta, que vive en madrigueras</p>
-                        </div>
-                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </section>
-            </div>
-            
+        </div>
+
+        <footer>
+            <p>&copy; 2024  Todos los derechos reservados.</p>
+        </footer>
+    </div>
+    
     <!-- Scripts -->
     <script src="script/logout.js"></script>
     <script src="script/slider.js"></script> <!-- Script del slider -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

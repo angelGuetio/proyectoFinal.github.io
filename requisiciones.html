@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/stylee.css">
+    <link rel="stylesheet" href="css/styles-home.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css"> <!-- Enlace al CSS del slider -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="user-info">
+            <div class="profile-picture">AG</div>
+            <h3>ANGEL YESID GUETIO</h3>
+            <p>yesid4681@gmail.com</p>
+        </div>
+        <ul class="menu">
+            <div class="enlaces">
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="requisiciones.html">Requerimientos</a></li>
+                <li><a href="formulario.html">Consultas estado</a></li>
+                <li><a href="registrar-usuario.html">Agregar nuevo usuario</a></li>
+                <li><a href="manual-usuario.html">Manual de usuario</a></li>
+                
+            </div>
+        </ul>
+        <button class="logout-btn">Cerrar Sesión</button>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <header>
+            <div class="logo">
+                <span><b>ABASTECIMIENTO</b></span>
+            </div>
+        </header>
+        <div class ="content">
+
+            <main>
+                <section class="request-form">
+
+                    <div class="form-container">
+                        <h2>Formulario de Solicitud de Requerimientos</h2>
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <label for="name">Nombre del Solicitante</label>
+                                <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                            </div>
+                    
+                            <div class="form-row">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+                            </div>
+                    
+                            <div class="form-row">
+                                <label for="department">Área/Departamento</label>
+                                <input type="text" id="department" name="department" placeholder="Área o departamento" required>
+                            </div>
+                    
+                            <div class="form-row">
+                                <label for="description">Descripción del Requerimiento</label>
+                                <textarea id="description" name="description" placeholder="Describe el requerimiento con detalle" rows="4" required></textarea>
+                            </div>
+                    
+                            <div class="form-row">
+                                <label for="priority">Prioridad</label>
+                                <select id="priority" name="priority">
+                                    <option value="" disabled selected>Selecciona la prioridad</option>
+                                    <option value="alta">Alta</option>
+                                    <option value="media">Media</option>
+                                    <option value="baja">Baja</option>
+                                </select>
+                            </div>
+                    
+                            <div class="form-row">
+                                <label for="file">Adjuntar Archivos</label>
+                                <input type="file" id="file" name="file">
+                            </div>
+                    
+                            <div class="form-row">
+                                <button type="submit">Enviar Solicitud</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    
+        
+                    <p id="statusMessage"></p>
+                </section>
+            </main>
+
+
+        </div>
+    
+        <!-- Pie de Página -->
+        <footer>
+            <p>&copy; 2024  Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/scriptt.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

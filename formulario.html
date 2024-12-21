@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/stylee.css">
+    <link rel="stylesheet" href="css/styles-home.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css"> <!-- Enlace al CSS del slider -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="user-info">
+            <div class="profile-picture">AG</div>
+            <h3>ANGEL YESID GUETIO</h3>
+            <p>yesid4681@gmail.com</p>
+        </div>
+        <ul class="menu">
+            <div class="enlaces">
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="requisiciones.html">Requerimientos</a></li>
+                <li><a href="formulario.html">Consultas estado</a></li>
+                <li><a href="registrar-usuario.html">Agregar nuevo usuario</a></li>
+                <li><a href="manual-usuario.html">Manual de usuario</a></li>
+            </div>
+        </ul>
+        <button class="logout-btn">Cerrar Sesión</button>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <header>
+            <div class="logo">
+                <span><b>ABASTECIMIENTO</b></span>
+            </div>
+        </header>
+        <div class="content">
+            <main>
+                <section class="contact-form">
+                    <div class="contento">
+                        <h2>Formulario de Contacto</h2>
+                        <p>
+                            En **Tech Solutions S.A.**, nos dedicamos a brindar soluciones tecnológicas innovadoras para empresas
+                            de todos los tamaños. Nuestro equipo está aquí para ayudarte a resolver tus inquietudes, atender tus
+                            sugerencias y garantizar que tengas una experiencia excepcional con nuestros productos y servicios.
+                        </p>
+                        <p>
+                            Si tienes alguna consulta o necesitas soporte, no dudes en escribirnos a través de este formulario.
+                            Nuestro equipo de atención al cliente se pondrá en contacto contigo lo antes posible.
+                        </p>
+                        <h3>Contáctanos:</h3>
+                        <ul>
+                            <li><b>Teléfono:</b> +57 123 456 7890</li>
+                            <li><b>Correo:</b> soporte@techsolutions.com</li>
+                            <li><b>Dirección:</b> Calle 123 #45-67, Bogotá, Colombia</li>
+                        </ul>
+                        <br>
+
+                        <!-- Formulario -->
+                        <form id="contactForm">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+            
+                            <label for="mail">Correo electrónico</label>
+                            <input type="email" id="mail" name="mail" placeholder="Tu correo electrónico" required>
+            
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí" rows="5" required></textarea>
+            
+                            <button type="submit">Enviar</button>
+                        </form>
+                        <p id="statusMensaje"></p>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Pie de Página -->
+        <footer>
+            <p>&copy; 2024 Todos los derechos reservados. Tech Solutions S.A.</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script/scriptt.js"></script>
+    <script src="script/logout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
